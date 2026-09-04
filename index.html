@@ -1,0 +1,85 @@
+<!DOCTYPE html> <!-- Define o documento como HTML5. -->
+<html lang="pt-BR"> <!-- Inicia o HTML e informa que a página está em português do Brasil. -->
+
+<head> <!-- Guarda as configurações da página. -->
+    <meta charset="UTF-8"> <!-- Permite utilizar acentos e caracteres especiais. -->
+    <title>Patas &amp; Cia</title> <!-- Define o título mostrado na aba do navegador. Entidades HTML -->
+    <link rel="icon" href="img/pata.png" type="image/png">
+    <link rel="stylesheet" href="style.css"> <!-- Liga o HTML ao CSS; href informa o caminho do arquivo. -->
+</head>
+
+<body> <!-- Inicia o conteúdo visível. -->
+    <div class="layout"> <!-- Cria um contêiner geral; class é um nome reutilizável para CSS e JavaScript. -->
+        <aside class="lateral"> <!-- Cria o menu lateral complementar da página. -->
+            <strong class="logo">Patas &amp; Cia</strong>
+            <!-- strong destaca um texto importante e logo identifica a marca no CSS. -->
+            <p>Creche, cuidado e diversão para cães.</p> <!-- Apresenta uma descrição curta do serviço. -->
+            <a href="#inicio">Início</a> <!-- Cria um link; href aponta para um elemento identificado por id. -->
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Contato</a>
+        </aside>
+        <div class="conteudo"> <!-- Agrupa o cabeçalho, o conteúdo principal e o rodapé. -->
+            <header class="cabecalho"> <!-- Cria o cabeçalho principal da página. -->
+                <strong class="marca">Patas &amp; Cia</strong> <!-- Reapresenta a marca com destaque visual. -->
+                <nav class="menu"> <!-- Agrupa os links principais de navegação. -->
+                    <a href="#servicos">Serviços</a> <!-- Cria o primeiro link do menu superior. -->
+                    <a href="#contato">Contato</a> <!-- Cria o segundo link do menu superior. -->
+                </nav>
+            </header>
+            <main> <!-- Inicia o conteúdo principal da página. -->
+                <div id="inicio" class="destaque">
+                    <!-- Cria o destaque inicial; id identifica este bloco de forma única. -->
+                    <h1>Seu cão brinca. Você fica tranquilo.</h1> <!-- Define o título mais importante da página. -->
+                    <p>Um espaço seguro, alegre e cheio de carinho para o seu melhor amigo.</p>
+                    <!-- Apresenta a mensagem principal. -->
+                    <a class="botao-principal" href="#servicos">Conhecer serviços</a>
+                    <!-- Cria um link visualmente semelhante a um botão. -->
+                </div>
+                <div id="servicos" class="galeria">
+                    <!-- Cria a área da galeria e identifica seu destino de navegação. -->
+                    <h2>Escolha o melhor cuidado</h2> <!-- Define o título da galeria. -->
+                    <div class="cards"> <!-- Agrupa todos os cartões de serviços. -->
+                        <div class="card"> <!-- Cria o primeiro cartão usando um contêiner genérico. -->
+                            <img src="img/creche.jpg" alt="Cão brincando na creche">
+                            <!-- Insere uma imagem; src indica o arquivo e alt descreve a imagem. -->
+                            <div class="info"> <!-- Agrupa as informações do primeiro serviço. -->
+                                <h3>Creche diária</h3> <!-- Define o nome do serviço. -->
+                                <p>Brincadeiras e socialização durante o dia.</p> <!-- Explica o serviço oferecido. -->
+                                <strong>R$ 45/dia</strong> <!-- Destaca o preço do serviço. -->
+                                <p class="detalhes">Ambiente monitorado para o cão gastar energia com segurança.</p>
+                                <!-- Guarda detalhes inicialmente ocultos. -->
+                                <button type="button">Ver detalhes</button>
+                                <!-- Cria um botão; type evita o envio de formulário. -->
+                            </div> <!-- Fecha as informações do primeiro cartão. -->
+                        </div> <!-- Fecha o primeiro cartão. -->
+                        <div class="card"> <!-- Cria o segundo cartão de serviço. -->
+                            <img src="img/banho.jpg" alt="Cão recebendo banho">
+                            <div class="info">
+                                <h3>Banho e carinho</h3>
+                                <p>Higiene, cuidado e muito carinho.</p>
+                                <strong>R$ 35</strong>
+                                <p class="detalhes">Banho tranquilo com produtos próprios para cães.</p>
+                                <button type="button">Ver detalhes</button>
+                            </div> <!-- Fecha as informações do segundo cartão. -->
+                        </div> <!-- Fecha o segundo cartão. -->
+                        <div class="card"> <!-- Cria o terceiro cartão de serviço. -->
+                            <img src="img/passeio.jpg" alt="Cão passeando com cuidador">
+                            <div class="info">
+                                <h3>Passeio guiado</h3>
+                                <p>Passeios divertidos e seguros.</p>
+                                <strong>R$ 20</strong> 
+                                <p class="detalhes">Passeio acompanhado por um cuidador responsável.</p>
+                                <button type="button">Ver detalhes</button>
+                            </div> <!-- Fecha as informações do terceiro cartão. -->
+                        </div> <!-- Fecha o terceiro cartão. -->
+                    </div> <!-- Fecha o conjunto de cartões. -->
+                </div> <!-- Fecha a galeria. -->
+            </main>
+            <footer id="contato">Patas &amp; Cia · Cuidado que seu cão merece.</footer>
+            <!-- Cria o rodapé e seu destino de navegação. -->
+        </div> <!-- Fecha a área de conteúdo. -->
+    </div> <!-- Fecha a estrutura geral. -->
+    <script src="script.js" defer></script> <!-- Liga o JavaScript e aguarda o carregamento do HTML. -->
+</body>
+
+</html>

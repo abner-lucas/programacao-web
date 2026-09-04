@@ -1,0 +1,201 @@
+* { /* O seletor universal (*) seleciona todos os elementos da página. */
+    box-sizing: border-box; /* Faz padding e bordas serem incluídos no tamanho total dos elementos. */
+}
+
+body { /* Define as configurações gerais do corpo da página. */
+    margin: 0; /* Remove a margem padrão criada pelo navegador. */
+    font-family: Arial, sans-serif; /* Define a fonte principal dos textos. */
+    background: #f8f5f1; /* Define a cor de fundo geral da página. */
+    color: #3d2f2a; /* Define a cor principal dos textos. */
+}
+
+.layout { /* Organiza o menu lateral e o restante da página. */
+    display: grid; /* Ativa o sistema de grade para organizar os elementos. */
+    grid-template-columns: 190px 1fr; /* Cria uma coluna de 190px e outra que ocupa o espaço restante. */
+    min-height: 100vh; /* Faz a estrutura ocupar pelo menos toda a altura da tela. */
+}
+
+.lateral { /* Estiliza o menu lateral. */
+    padding: 24px 16px; /* Cria espaço interno vertical e horizontal. */
+    background: #4e342e; /* Define o fundo marrom do menu. */
+    color: white; /* Define a cor clara dos textos do menu. */
+}
+
+.logo { /* Estiliza o nome da creche no menu lateral. */
+    display: block; /* Faz a marca ocupar uma linha inteira. */
+    margin: 0 0 12px; /* Remove a margem superior e cria espaço abaixo da marca. */
+    font-size: 24px; /* Aumenta o tamanho da marca. */
+    color: #ffd180; /* Destaca a marca com uma cor amarelada. */
+}
+
+.lateral p { /* Estiliza a descrição do menu lateral. */
+    font-size: 14px; /* Define um tamanho menor para o texto auxiliar. */
+    line-height: 1.5; /* Aumenta o espaço entre as linhas. */
+    color: #eaded6; /* Usa uma cor mais suave para a descrição. */
+}
+
+.lateral a { /* Estiliza os links do menu lateral. */
+    display: block; /* Faz cada link ocupar uma linha completa. */
+    padding: 9px; /* Cria espaço interno para facilitar o clique. */
+    margin: 6px 0; /* Separa os links verticalmente. */
+    color: white; /* Define a cor dos links. */
+    text-decoration: none; /* Remove o sublinhado padrão dos links. */
+    border-radius: 8px; /* Arredonda as bordas dos links. */
+    transition: .2s; /* Suaviza as mudanças visuais causadas pelo cursor. */
+}
+
+.lateral a:hover { /* O pseudoestado :hover aplica estilo quando o cursor passa sobre o link. */
+    background: #ffb74d; /* Muda o fundo para destacar o link selecionado. */
+    transform: translateX(3px); /* Move o link levemente para a direita. */
+}
+
+.conteudo { /* Organiza o conteúdo principal da página. */
+    display: flex; /* Ativa o sistema flexível de organização. */
+    flex-direction: column; /* Coloca cabeçalho, conteúdo e rodapé em coluna. */
+}
+
+.cabecalho { /* Estiliza o cabeçalho superior. */
+    display: flex; /* Coloca a marca e o menu na mesma linha. */
+    justify-content: space-between; /* Mantém a marca de um lado e o menu do outro. */
+    align-items: center; /* Centraliza os elementos verticalmente. */
+    padding: 16px 28px; /* Cria espaço interno no cabeçalho. */
+    background: white; /* Define o fundo branco do cabeçalho. */
+}
+
+.marca { /* Estiliza a marca do cabeçalho. */
+    margin: 0; /* Remove possíveis margens padrão. */
+    color: #e67e22; /* Define a cor laranja da marca. */
+    font-size: 20px; /* Define o tamanho da marca. */
+}
+
+.menu { /* Organiza os links do menu superior. */
+    display: flex; /* Coloca os links lado a lado. */
+    gap: 18px; /* Cria espaço entre os links. */
+}
+
+.menu a { /* Estiliza os links do cabeçalho. */
+    color: #4e342e; /* Define a cor dos links. */
+    text-decoration: none; /* Remove o sublinhado. */
+    font-weight: bold; /* Deixa os links em negrito. */
+}
+
+.menu a:hover { /* Define a aparência dos links superiores durante o cursor. */
+    color: #e67e22; /* Altera a cor para indicar a interação. */
+}
+
+main { /* Estiliza o conteúdo principal. */
+    flex: 1; /* Faz o conteúdo ocupar o espaço restante entre cabeçalho e rodapé. */
+    padding: 28px; /* Cria espaço entre o conteúdo e as bordas. */
+}
+
+.destaque { /* Estiliza o bloco inicial de apresentação. */
+    max-width: 850px; /* Limita a largura máxima do bloco. */
+    padding: 34px; /* Cria espaço interno no destaque. */
+    border-radius: 20px; /* Arredonda os cantos do bloco. */
+    background: linear-gradient(135deg, #ffb74d, #f57c00); /* Cria um degradê entre duas cores. */
+    color: white; /* Define textos claros sobre o fundo colorido. */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15); /* Cria uma sombra suave ao redor do bloco.
+                                                    deslocamento-horizontal deslocamento-vertical desfoque cor
+                                                    rgba(vermelho, verde, azul, transparência)
+    */
+}
+
+.destaque h1 { /* Estiliza o título principal. */
+    max-width: 500px; /* Limita a largura do título. */
+    margin: 8px 0; /* Cria pequeno espaço acima e abaixo do título. */
+    font-size: 36px; /* Aumenta o tamanho do título. */
+}
+
+.destaque p { /* Estiliza o texto de apresentação. */
+    max-width: 500px; /* Limita a largura do texto. */
+    line-height: 1.5; /* Melhora o espaçamento entre as linhas. */
+}
+
+.botao-principal { /* Estiliza o link principal como um botão. */
+    display: inline-block; /* Permite aplicar padding e dimensões ao link. */
+    margin-top: 12px; /* Separa o botão do texto acima. */
+    padding: 11px 16px; /* Cria espaço interno no botão. */
+    border-radius: 8px; /* Arredonda os cantos do botão. */
+    background: white; /* Define o fundo branco do botão. */
+    color: #e65100; /* Define a cor do texto do botão. */
+    text-decoration: none; /* Remove o sublinhado do link. */
+    font-weight: bold; /* Destaca o texto do botão. */
+}
+
+.galeria { /* Estiliza a área que contém os serviços. */
+    margin-top: 28px; /* Cria espaço entre o destaque e a galeria. */
+}
+
+.cards { /* Organiza os cartões dos serviços. */
+    display: grid; /* Ativa novamente o sistema de grade. */
+    grid-template-columns: repeat(3, 1fr); /* Cria três colunas iguais usando a unidade fracional. */
+    gap: 16px; /* Cria espaço entre os cartões. */
+    margin-top: 16px; /* Separa os cartões do título da galeria. */
+}
+
+.card { /* Estiliza cada cartão de serviço. */
+    overflow: hidden; /* Impede que conteúdos ultrapassem os cantos arredondados. */
+    background: white; /* Define o fundo branco dos cartões. */
+    border-radius: 14px; /* Arredonda os cantos dos cartões. */
+    box-shadow: 0 5px 14px rgba(0, 0, 0, .12); /* Cria profundidade visual nos cartões. */
+}
+
+.card img { /* Estiliza as imagens dos cartões. */
+    width: 100%; /* Faz a imagem ocupar toda a largura do cartão. */
+    height: 150px; /* Define uma altura padrão para as imagens. */
+    object-fit: cover; /* Preenche o espaço sem deformar a imagem. */
+    display: block; /* Remove espaços indesejados abaixo da imagem. */
+}
+
+.info { /* Estiliza a área textual dos cartões. */
+    padding: 15px; /* Cria espaço interno para as informações. */
+}
+
+.info h3 { /* Estiliza o nome do serviço. */
+    margin: 0 0 5px; /* Remove a margem superior e cria espaço abaixo do título. */
+}
+
+.info p { /* Estiliza os textos dos cartões. */
+    margin: 6px 0; /* Cria pequenas separações verticais. */
+    color: #776963; /* Define uma cor neutra para os textos. */
+    line-height: 1.4; /* Melhora a leitura das descrições. */
+}
+
+.card strong { /* Estiliza o preço destacado pelo elemento strong. */
+    display: block; /* Faz o preço ocupar uma linha inteira. */
+    margin: 10px 0; /* Cria espaço acima e abaixo do preço. */
+    color: #e65100; /* Destaca o preço com a cor laranja. */
+    font-size: 18px; /* Aumenta o tamanho do preço. */
+}
+
+.detalhes { /* Define o estado inicial dos detalhes. */
+    display: none; /* Esconde os detalhes antes do clique. */
+}
+
+.card.aberto .detalhes { /* Seleciona os detalhes de um cartão com a classe aberto. */
+    display: block; /* Mostra os detalhes após a interação do usuário. */
+}
+
+button { /* Estiliza os botões dos cartões. */
+    width: 100%; /* Faz o botão ocupar toda a largura disponível. */
+    padding: 10px; /* Cria espaço interno para facilitar o clique. */
+    border: 0; /* Remove a borda padrão do botão. */
+    border-radius: 8px; /* Arredonda os cantos do botão. */
+    background: #fff3e0; /* Define um fundo laranja bem claro. */
+    color: #e65100; /* Define a cor do texto do botão. */
+    font-weight: bold; /* Destaca o texto do botão. */
+    cursor: pointer; /* Mostra a mão indicando que o elemento é clicável. */
+    transition: .2s; /* Suaviza a alteração visual do botão. */
+}
+
+button:hover { /* Define o efeito dos botões durante a passagem do cursor. */
+    background: #ffe0b2; /* Altera suavemente a cor do fundo. */
+    transform: scale(1.02); /* Aumenta levemente o botão. */
+}
+
+footer { /* Estiliza o rodapé da página. */
+    padding: 14px; /* Cria espaço interno no rodapé. */
+    text-align: center; /* Centraliza o texto horizontalmente. */
+    background: #4e342e; /* Repete a cor do menu lateral. */
+    color: white; /* Define uma cor clara para o texto. */
+}
