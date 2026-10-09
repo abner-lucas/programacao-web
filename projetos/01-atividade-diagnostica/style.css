@@ -1,0 +1,489 @@
+/* VARIÁVEIS CSS */
+:root {
+    --bg-main: #f4f7f6;
+    --sidebar-bg: #1a365d;
+    --sidebar-hover: #2a4365;
+    --primary-color: #319795;
+    --primary-dark: #285e61;
+    --text-dark: #2d3748;
+    --text-light: #e2e8f0;
+    --white: #ffffff;
+    --danger: #e53e3e;
+    --success: #38a169;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --transition: all 0.3s ease;
+}
+
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* LAYOUT PRINCIPAL COM FLEXBOX */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 1. MENU LATERAL (SIDEBAR) */
+
+.sidebar-download {
+    padding: 20px 20px 10px 20px;
+    text-align: center;
+}
+.btn-download {
+    display: block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.btn-download:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.sidebar {
+    width: 280px;
+    background-color: var(--sidebar-bg);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    z-index: 10;
+    /* Posicionamento relativo para poder fixar o footer */
+    position: relative; 
+}
+
+.logo {
+    padding: 30px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.menu {
+    flex: 1;
+    padding: 20px 0;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu-link {
+    display: block;
+    padding: 15px 25px;
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    border-left: 4px solid transparent;
+    transition: var(--transition);
+}
+
+.menu-link.nav-back {
+    color: #fbd38d;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.menu-link.nav-back:hover {
+    background-color: rgba(251, 211, 141, 0.15);
+    color: #fff;
+    border-left-color: #fbd38d;
+}
+
+.menu-link:hover, .menu-link.active {
+    background-color: var(--sidebar-hover);
+    color: var(--white);
+    border-left-color: var(--primary-color);
+}
+
+/* Demonstração de Posicionamento Absolute */
+.sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.2);
+    font-size: 0.9rem;
+    color: #a0aec0;
+}
+
+/* 2. ÁREA PRINCIPAL */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    /* Posicionamento relativo como âncora para elementos absolutos internos, se necessário */
+    position: relative; 
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.content-header h1 {
+    font-size: 2.5rem;
+    color: var(--sidebar-bg);
+    margin-bottom: 10px;
+}
+
+.content-header p {
+    font-size: 1.1rem;
+    color: #718096;
+    margin-bottom: 30px;
+}
+
+/* Imagem Hero e Container */
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow);
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(26, 54, 93, 0.9));
+    color: var(--white);
+    padding: 30px;
+}
+
+.hero-overlay h3 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+/* 3. FORMULÁRIO DE ACESSO (Simulação Interativa) */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.login-box {
+    background-color: var(--white);
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+/* Efeito Transform (Hover na caixa) */
+.login-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-header h3 {
+    font-size: 1.5rem;
+    color: var(--sidebar-bg);
+}
+
+.login-header p {
+    color: #a0aec0;
+    font-size: 0.9rem;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(49, 151, 149, 0.2);
+}
+
+/* Botão com Transform */
+.btn-acesso {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+}
+
+.btn-acesso:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.02); /* Requisito do Transform */
+}
+
+.btn-acesso .arrow {
+    transition: transform 0.3s ease;
+}
+
+.btn-acesso:hover .arrow {
+    transform: translateX(5px);
+}
+
+/* Mensagem de Sucesso (Oculta via JS) */
+.success-box {
+    background-color: #f0fff4;
+    border: 2px solid var(--success);
+    width: 100%;
+    max-width: 450px;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.success-box .icon-check {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.success-box h3 {
+    color: var(--success);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.btn-outline {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid var(--success);
+    color: var(--success);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.btn-outline:hover {
+    background: var(--success);
+    color: white;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 4. MODAIS (SUBPÁGINAS FLUTUANTES) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    backdrop-filter: blur(5px);
+    transition: var(--transition);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-container {
+    background-color: var(--white);
+    width: 90%;
+    max-width: 600px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    transform: translateY(20px) scale(0.95);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-large {
+    max-width: 900px;
+}
+
+.modal-overlay.active .modal-container {
+    transform: translateY(0) scale(1);
+}
+
+.btn-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--white);
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.2s;
+}
+
+.btn-close:hover {
+    color: #fbd38d;
+}
+
+.modal-header {
+    background-color: var(--sidebar-bg);
+    color: var(--white);
+    padding: 25px 30px;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.modal-body {
+    padding: 30px;
+    line-height: 1.7;
+}
+
+.modal-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.callout {
+    background-color: #ebf8ff;
+    border-left: 4px solid #3182ce;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 0 6px 6px 0;
+}
+
+.lista-detalhes, .check-list {
+    margin: 15px 0 20px 20px;
+}
+
+.check-list li {
+    margin-bottom: 10px;
+    list-style-type: "✔️ ";
+}
+
+/* Grid Requisitos */
+.req-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.req-card {
+    background-color: #f7fafc;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.req-card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+    border-bottom: 2px solid #cbd5e0;
+    padding-bottom: 5px;
+}
+
+.req-card ul {
+    margin-left: 15px;
+    font-size: 0.95rem;
+}
+
+.alert-info {
+    background-color: #fffaf0;
+    border: 1px solid #feebc8;
+    color: #c05621;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+    .sidebar-footer {
+        position: relative;
+    }
+    .main-content {
+        padding: 20px;
+        height: auto;
+    }
+}
+

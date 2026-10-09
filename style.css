@@ -1,201 +1,902 @@
-* { /* O seletor universal (*) seleciona todos os elementos da página. */
-    box-sizing: border-box; /* Faz padding e bordas serem incluídos no tamanho total dos elementos. */
+/* ========================================================
+   PORTAL DE PROGRAMAÇÃO WEB - ESTILOS PRINCIPAIS
+   Prof. Me. Ábner Lucas · Turma 2026
+   ======================================================== */
+
+:root {
+    --bg-page: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-surface: #f1f5f9;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #dbeafe;
+    --accent: #0d9488;
+    --accent-light: #ccfbf1;
+    --orange: #ea580c;
+    --orange-light: #ffedd5;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --border-light: #f1f5f9;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-full: 9999px;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 25px -3px rgba(15, 23, 42, 0.08), 0 4px 10px -4px rgba(15, 23, 42, 0.04);
+    --shadow-hover: 0 20px 30px -5px rgba(15, 23, 42, 0.12);
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-body { /* Define as configurações gerais do corpo da página. */
-    margin: 0; /* Remove a margem padrão criada pelo navegador. */
-    font-family: Arial, sans-serif; /* Define a fonte principal dos textos. */
-    background: #f8f5f1; /* Define a cor de fundo geral da página. */
-    color: #3d2f2a; /* Define a cor principal dos textos. */
+/* RESET E PADRÕES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.layout { /* Organiza o menu lateral e o restante da página. */
-    display: grid; /* Ativa o sistema de grade para organizar os elementos. */
-    grid-template-columns: 190px 1fr; /* Cria uma coluna de 190px e outra que ocupa o espaço restante. */
-    min-height: 100vh; /* Faz a estrutura ocupar pelo menos toda a altura da tela. */
+html {
+    scroll-behavior: smooth;
 }
 
-.lateral { /* Estiliza o menu lateral. */
-    padding: 24px 16px; /* Cria espaço interno vertical e horizontal. */
-    background: #4e342e; /* Define o fundo marrom do menu. */
-    color: white; /* Define a cor clara dos textos do menu. */
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-.logo { /* Estiliza o nome da creche no menu lateral. */
-    display: block; /* Faz a marca ocupar uma linha inteira. */
-    margin: 0 0 12px; /* Remove a margem superior e cria espaço abaixo da marca. */
-    font-size: 24px; /* Aumenta o tamanho da marca. */
-    color: #ffd180; /* Destaca a marca com uma cor amarelada. */
+img {
+    max-width: 100%;
+    display: block;
 }
 
-.lateral p { /* Estiliza a descrição do menu lateral. */
-    font-size: 14px; /* Define um tamanho menor para o texto auxiliar. */
-    line-height: 1.5; /* Aumenta o espaço entre as linhas. */
-    color: #eaded6; /* Usa uma cor mais suave para a descrição. */
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-.lateral a { /* Estiliza os links do menu lateral. */
-    display: block; /* Faz cada link ocupar uma linha completa. */
-    padding: 9px; /* Cria espaço interno para facilitar o clique. */
-    margin: 6px 0; /* Separa os links verticalmente. */
-    color: white; /* Define a cor dos links. */
-    text-decoration: none; /* Remove o sublinhado padrão dos links. */
-    border-radius: 8px; /* Arredonda as bordas dos links. */
-    transition: .2s; /* Suaviza as mudanças visuais causadas pelo cursor. */
+/* ================= NAVBAR ================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
 }
 
-.lateral a:hover { /* O pseudoestado :hover aplica estilo quando o cursor passa sobre o link. */
-    background: #ffb74d; /* Muda o fundo para destacar o link selecionado. */
-    transform: translateX(3px); /* Move o link levemente para a direita. */
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.conteudo { /* Organiza o conteúdo principal da página. */
-    display: flex; /* Ativa o sistema flexível de organização. */
-    flex-direction: column; /* Coloca cabeçalho, conteúdo e rodapé em coluna. */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
 }
 
-.cabecalho { /* Estiliza o cabeçalho superior. */
-    display: flex; /* Coloca a marca e o menu na mesma linha. */
-    justify-content: space-between; /* Mantém a marca de um lado e o menu do outro. */
-    align-items: center; /* Centraliza os elementos verticalmente. */
-    padding: 16px 28px; /* Cria espaço interno no cabeçalho. */
-    background: white; /* Define o fundo branco do cabeçalho. */
+.brand-badge {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: #ffffff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
 }
 
-.marca { /* Estiliza a marca do cabeçalho. */
-    margin: 0; /* Remove possíveis margens padrão. */
-    color: #e67e22; /* Define a cor laranja da marca. */
-    font-size: 20px; /* Define o tamanho da marca. */
+.brand-text strong {
+    color: var(--primary);
 }
 
-.menu { /* Organiza os links do menu superior. */
-    display: flex; /* Coloca os links lado a lado. */
-    gap: 18px; /* Cria espaço entre os links. */
+.nav-links {
+    display: flex;
+    gap: 28px;
 }
 
-.menu a { /* Estiliza os links do cabeçalho. */
-    color: #4e342e; /* Define a cor dos links. */
-    text-decoration: none; /* Remove o sublinhado. */
-    font-weight: bold; /* Deixa os links em negrito. */
+.nav-link {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    padding: 6px 0;
+    position: relative;
+    transition: var(--transition);
 }
 
-.menu a:hover { /* Define a aparência dos links superiores durante o cursor. */
-    color: #e67e22; /* Altera a cor para indicar a interação. */
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
 }
 
-main { /* Estiliza o conteúdo principal. */
-    flex: 1; /* Faz o conteúdo ocupar o espaço restante entre cabeçalho e rodapé. */
-    padding: 28px; /* Cria espaço entre o conteúdo e as bordas. */
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary);
+    border-radius: 2px;
 }
 
-.destaque { /* Estiliza o bloco inicial de apresentação. */
-    max-width: 850px; /* Limita a largura máxima do bloco. */
-    padding: 34px; /* Cria espaço interno no destaque. */
-    border-radius: 20px; /* Arredonda os cantos do bloco. */
-    background: linear-gradient(135deg, #ffb74d, #f57c00); /* Cria um degradê entre duas cores. */
-    color: white; /* Define textos claros sobre o fundo colorido. */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, .15); /* Cria uma sombra suave ao redor do bloco.
-                                                    deslocamento-horizontal deslocamento-vertical desfoque cor
-                                                    rgba(vermelho, verde, azul, transparência)
-    */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
-.destaque h1 { /* Estiliza o título principal. */
-    max-width: 500px; /* Limita a largura do título. */
-    margin: 8px 0; /* Cria pequeno espaço acima e abaixo do título. */
-    font-size: 36px; /* Aumenta o tamanho do título. */
+.teacher-tag {
+    background-color: var(--bg-surface);
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-color);
 }
 
-.destaque p { /* Estiliza o texto de apresentação. */
-    max-width: 500px; /* Limita a largura do texto. */
-    line-height: 1.5; /* Melhora o espaçamento entre as linhas. */
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 6px;
 }
 
-.botao-principal { /* Estiliza o link principal como um botão. */
-    display: inline-block; /* Permite aplicar padding e dimensões ao link. */
-    margin-top: 12px; /* Separa o botão do texto acima. */
-    padding: 11px 16px; /* Cria espaço interno no botão. */
-    border-radius: 8px; /* Arredonda os cantos do botão. */
-    background: white; /* Define o fundo branco do botão. */
-    color: #e65100; /* Define a cor do texto do botão. */
-    text-decoration: none; /* Remove o sublinhado do link. */
-    font-weight: bold; /* Destaca o texto do botão. */
+.mobile-toggle span {
+    display: block;
+    width: 24px;
+    height: 2.5px;
+    background-color: var(--text-primary);
+    border-radius: 2px;
+    transition: var(--transition);
 }
 
-.galeria { /* Estiliza a área que contém os serviços. */
-    margin-top: 28px; /* Cria espaço entre o destaque e a galeria. */
+/* ================= HERO SECTION ================= */
+.hero-section {
+    padding: 70px 24px 80px;
+    background: linear-gradient(180deg, #ffffff 0%, var(--bg-page) 100%);
+    border-bottom: 1px solid var(--border-color);
 }
 
-.cards { /* Organiza os cartões dos serviços. */
-    display: grid; /* Ativa novamente o sistema de grade. */
-    grid-template-columns: repeat(3, 1fr); /* Cria três colunas iguais usando a unidade fracional. */
-    gap: 16px; /* Cria espaço entre os cartões. */
-    margin-top: 16px; /* Separa os cartões do título da galeria. */
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 50px;
+    align-items: center;
 }
 
-.card { /* Estiliza cada cartão de serviço. */
-    overflow: hidden; /* Impede que conteúdos ultrapassem os cantos arredondados. */
-    background: white; /* Define o fundo branco dos cartões. */
-    border-radius: 14px; /* Arredonda os cantos dos cartões. */
-    box-shadow: 0 5px 14px rgba(0, 0, 0, .12); /* Cria profundidade visual nos cartões. */
+.badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    margin-bottom: 20px;
 }
 
-.card img { /* Estiliza as imagens dos cartões. */
-    width: 100%; /* Faz a imagem ocupar toda a largura do cartão. */
-    height: 150px; /* Define uma altura padrão para as imagens. */
-    object-fit: cover; /* Preenche o espaço sem deformar a imagem. */
-    display: block; /* Remove espaços indesejados abaixo da imagem. */
+.dot-live {
+    width: 8px;
+    height: 8px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
+    animation: pulseDot 2s infinite;
 }
 
-.info { /* Estiliza a área textual dos cartões. */
-    padding: 15px; /* Cria espaço interno para as informações. */
+@keyframes pulseDot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.9); }
 }
 
-.info h3 { /* Estiliza o nome do serviço. */
-    margin: 0 0 5px; /* Remove a margem superior e cria espaço abaixo do título. */
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 18px;
 }
 
-.info p { /* Estiliza os textos dos cartões. */
-    margin: 6px 0; /* Cria pequenas separações verticais. */
-    color: #776963; /* Define uma cor neutra para os textos. */
-    line-height: 1.4; /* Melhora a leitura das descrições. */
+.hero-title span {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.card strong { /* Estiliza o preço destacado pelo elemento strong. */
-    display: block; /* Faz o preço ocupar uma linha inteira. */
-    margin: 10px 0; /* Cria espaço acima e abaixo do preço. */
-    color: #e65100; /* Destaca o preço com a cor laranja. */
-    font-size: 18px; /* Aumenta o tamanho do preço. */
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 580px;
 }
 
-.detalhes { /* Define o estado inicial dos detalhes. */
-    display: none; /* Esconde os detalhes antes do clique. */
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
-.card.aberto .detalhes { /* Seleciona os detalhes de um cartão com a classe aberto. */
-    display: block; /* Mostra os detalhes após a interação do usuário. */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
 }
 
-button { /* Estiliza os botões dos cartões. */
-    width: 100%; /* Faz o botão ocupar toda a largura disponível. */
-    padding: 10px; /* Cria espaço interno para facilitar o clique. */
-    border: 0; /* Remove a borda padrão do botão. */
-    border-radius: 8px; /* Arredonda os cantos do botão. */
-    background: #fff3e0; /* Define um fundo laranja bem claro. */
-    color: #e65100; /* Define a cor do texto do botão. */
-    font-weight: bold; /* Destaca o texto do botão. */
-    cursor: pointer; /* Mostra a mão indicando que o elemento é clicável. */
-    transition: .2s; /* Suaviza a alteração visual do botão. */
+.btn-primary {
+    background-color: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
 }
 
-button:hover { /* Define o efeito dos botões durante a passagem do cursor. */
-    background: #ffe0b2; /* Altera suavemente a cor do fundo. */
-    transform: scale(1.02); /* Aumenta levemente o botão. */
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
 }
 
-footer { /* Estiliza o rodapé da página. */
-    padding: 14px; /* Cria espaço interno no rodapé. */
-    text-align: center; /* Centraliza o texto horizontalmente. */
-    background: #4e342e; /* Repete a cor do menu lateral. */
-    color: white; /* Define uma cor clara para o texto. */
+.btn-secondary {
+    background-color: #ffffff;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
 }
+
+.btn-secondary:hover {
+    background-color: var(--bg-surface);
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+.hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 32px;
+    background-color: var(--border-color);
+}
+
+/* CODE PREVIEW WINDOW */
+.code-preview-window {
+    background: #0f172a;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    border: 1px solid #1e293b;
+}
+
+.window-header {
+    background: #1e293b;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.window-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dot-red { background: #ef4444; }
+.dot-yellow { background: #f59e0b; }
+.dot-green { background: #10b981; }
+
+.window-title {
+    color: #94a3b8;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+}
+
+.window-body {
+    padding: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.88rem;
+    color: #e2e8f0;
+}
+
+.code-line {
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+
+.indent-1 {
+    padding-left: 20px;
+}
+
+.code-keyword { color: #f43f5e; font-weight: 600; }
+.code-var { color: #38bdf8; }
+.code-prop { color: #a78bfa; }
+.code-str { color: #34d399; }
+
+.code-status-box {
+    margin-top: 20px;
+    padding: 12px 16px;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: var(--radius-sm);
+    color: #6ee7b7;
+    font-size: 0.82rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pulse-icon {
+    font-weight: 800;
+}
+
+/* ================= SECTIONS GERAIS ================= */
+.section {
+    padding: 80px 24px;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 40px;
+}
+
+.section-tag {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.section-desc {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+}
+
+/* ================= PROJETOS SECTION ================= */
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 8px 20px;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover {
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+}
+
+.filter-btn.active {
+    background-color: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: #cbd5e1;
+}
+
+.project-badge-top {
+    padding: 16px 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge {
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+}
+
+.badge-accent {
+    background-color: var(--accent-light);
+    color: var(--accent);
+}
+
+.badge-brand {
+    background-color: var(--orange-light);
+    color: var(--orange);
+}
+
+.badge-subtle {
+    background-color: var(--bg-surface);
+    color: var(--text-muted);
+}
+
+.project-media {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background-color: #e2e8f0;
+}
+
+.project-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-media img {
+    transform: scale(1.05);
+}
+
+.media-overlay {
+    position: absolute;
+    bottom: 12px;
+    left: 16px;
+}
+
+.overlay-tag {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+}
+
+.project-body {
+    padding: 24px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.project-summary {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.highlight {
+    background-color: var(--bg-surface);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--primary);
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.tech-tag {
+    background-color: var(--bg-surface);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+}
+
+.project-footer {
+    padding: 16px 20px 20px;
+    background-color: #fafbfd;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    gap: 12px;
+}
+
+.btn-card-primary {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--primary);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding: 11px 16px;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.btn-card-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-card-primary span {
+    transition: transform 0.2s ease;
+}
+
+.btn-card-primary:hover span {
+    transform: translateX(4px);
+}
+
+.btn-card-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding: 11px 16px;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.btn-card-secondary:hover {
+    background-color: var(--bg-surface);
+}
+
+/* ================= MATERIAIS SECTION ================= */
+.materials-section {
+    background-color: #ffffff;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 24px;
+}
+
+.material-card {
+    background-color: var(--bg-page);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: var(--transition);
+}
+
+.material-card:hover {
+    border-color: #cbd5e1;
+    box-shadow: var(--shadow-md);
+}
+
+.material-icon {
+    font-size: 2.2rem;
+    background: #ffffff;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.material-info {
+    flex: 1;
+}
+
+.material-info h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.material-info p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.material-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.material-action {
+    display: flex;
+    align-items: center;
+}
+
+.btn-download-file {
+    background-color: #ffffff;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    font-weight: 700;
+    font-size: 0.88rem;
+    padding: 8px 16px;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.btn-download-file:hover {
+    background-color: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+/* ================= TIMELINE SECTION ================= */
+.timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.timeline-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    transition: var(--transition);
+}
+
+.timeline-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+
+.step-badge {
+    display: inline-block;
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    margin-bottom: 16px;
+}
+
+.timeline-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.timeline-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    padding: 60px 24px 30px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-brand h3 {
+    color: #ffffff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+}
+
+.footer-brand p {
+    font-size: 0.95rem;
+    max-width: 450px;
+}
+
+.footer-info {
+    text-align: right;
+    font-size: 0.95rem;
+}
+
+.footer-info strong {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 24px;
+    border-top: 1px solid #1e293b;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+/* ================= RESPONSIVIDADE ================= */
+@media (max-width: 992px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .materials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-info {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        padding: 20px 24px;
+        gap: 16px;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .teacher-tag {
+        display: none;
+    }
+
+    .hero-section {
+        padding: 50px 20px 60px;
+    }
+
+    .hero-title {
+        font-size: 2.1rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .material-card {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .btn-download-file {
+        width: 100%;
+        text-align: center;
+    }
+}
+

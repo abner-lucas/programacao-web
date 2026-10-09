@@ -1,85 +1,304 @@
-<!DOCTYPE html> <!-- Define o documento como HTML5. -->
-<html lang="pt-BR"> <!-- Inicia o HTML e informa que a página está em português do Brasil. -->
-
-<head> <!-- Guarda as configurações da página. -->
-    <meta charset="UTF-8"> <!-- Permite utilizar acentos e caracteres especiais. -->
-    <title>Patas &amp; Cia</title> <!-- Define o título mostrado na aba do navegador. Entidades HTML -->
-    <link rel="icon" href="img/pata.png" type="image/png">
-    <link rel="stylesheet" href="style.css"> <!-- Liga o HTML ao CSS; href informa o caminho do arquivo. -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal da Disciplina · Programação Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<body> <!-- Inicia o conteúdo visível. -->
-    <div class="layout"> <!-- Cria um contêiner geral; class é um nome reutilizável para CSS e JavaScript. -->
-        <aside class="lateral"> <!-- Cria o menu lateral complementar da página. -->
-            <strong class="logo">Patas &amp; Cia</strong>
-            <!-- strong destaca um texto importante e logo identifica a marca no CSS. -->
-            <p>Creche, cuidado e diversão para cães.</p> <!-- Apresenta uma descrição curta do serviço. -->
-            <a href="#inicio">Início</a> <!-- Cria um link; href aponta para um elemento identificado por id. -->
-            <a href="#servicos">Serviços</a>
-            <a href="#contato">Contato</a>
-        </aside>
-        <div class="conteudo"> <!-- Agrupa o cabeçalho, o conteúdo principal e o rodapé. -->
-            <header class="cabecalho"> <!-- Cria o cabeçalho principal da página. -->
-                <strong class="marca">Patas &amp; Cia</strong> <!-- Reapresenta a marca com destaque visual. -->
-                <nav class="menu"> <!-- Agrupa os links principais de navegação. -->
-                    <a href="#servicos">Serviços</a> <!-- Cria o primeiro link do menu superior. -->
-                    <a href="#contato">Contato</a> <!-- Cria o segundo link do menu superior. -->
-                </nav>
-            </header>
-            <main> <!-- Inicia o conteúdo principal da página. -->
-                <div id="inicio" class="destaque">
-                    <!-- Cria o destaque inicial; id identifica este bloco de forma única. -->
-                    <h1>Seu cão brinca. Você fica tranquilo.</h1> <!-- Define o título mais importante da página. -->
-                    <p>Um espaço seguro, alegre e cheio de carinho para o seu melhor amigo.</p>
-                    <!-- Apresenta a mensagem principal. -->
-                    <a class="botao-principal" href="#servicos">Conhecer serviços</a>
-                    <!-- Cria um link visualmente semelhante a um botão. -->
+    <!-- CABEÇALHO / NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand">
+                <span class="brand-badge">&lt;/&gt;</span>
+                <span class="brand-text">Prog<strong>Web</strong></span>
+            </a>
+
+            <nav class="nav-links" id="nav-menu">
+                <a href="#inicio" class="nav-link active">Início</a>
+                <a href="#projetos" class="nav-link">Projetos Práticos</a>
+                <a href="#materiais" class="nav-link">Materiais &amp; PDFs</a>
+                <a href="#trilha" class="nav-link">Trilha de Aprendizado</a>
+            </nav>
+
+            <div class="nav-actions">
+                <span class="teacher-tag">Prof. Me. Ábner Lucas</span>
+                <button class="mobile-toggle" id="menu-toggle" aria-label="Abrir Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="badge-pill">
+                    <span class="dot-live"></span> Turma 2026 · Ambiente Acadêmico
                 </div>
-                <div id="servicos" class="galeria">
-                    <!-- Cria a área da galeria e identifica seu destino de navegação. -->
-                    <h2>Escolha o melhor cuidado</h2> <!-- Define o título da galeria. -->
-                    <div class="cards"> <!-- Agrupa todos os cartões de serviços. -->
-                        <div class="card"> <!-- Cria o primeiro cartão usando um contêiner genérico. -->
-                            <img src="img/creche.jpg" alt="Cão brincando na creche">
-                            <!-- Insere uma imagem; src indica o arquivo e alt descreve a imagem. -->
-                            <div class="info"> <!-- Agrupa as informações do primeiro serviço. -->
-                                <h3>Creche diária</h3> <!-- Define o nome do serviço. -->
-                                <p>Brincadeiras e socialização durante o dia.</p> <!-- Explica o serviço oferecido. -->
-                                <strong>R$ 45/dia</strong> <!-- Destaca o preço do serviço. -->
-                                <p class="detalhes">Ambiente monitorado para o cão gastar energia com segurança.</p>
-                                <!-- Guarda detalhes inicialmente ocultos. -->
-                                <button type="button">Ver detalhes</button>
-                                <!-- Cria um botão; type evita o envio de formulário. -->
-                            </div> <!-- Fecha as informações do primeiro cartão. -->
-                        </div> <!-- Fecha o primeiro cartão. -->
-                        <div class="card"> <!-- Cria o segundo cartão de serviço. -->
-                            <img src="img/banho.jpg" alt="Cão recebendo banho">
-                            <div class="info">
-                                <h3>Banho e carinho</h3>
-                                <p>Higiene, cuidado e muito carinho.</p>
-                                <strong>R$ 35</strong>
-                                <p class="detalhes">Banho tranquilo com produtos próprios para cães.</p>
-                                <button type="button">Ver detalhes</button>
-                            </div> <!-- Fecha as informações do segundo cartão. -->
-                        </div> <!-- Fecha o segundo cartão. -->
-                        <div class="card"> <!-- Cria o terceiro cartão de serviço. -->
-                            <img src="img/passeio.jpg" alt="Cão passeando com cuidador">
-                            <div class="info">
-                                <h3>Passeio guiado</h3>
-                                <p>Passeios divertidos e seguros.</p>
-                                <strong>R$ 20</strong> 
-                                <p class="detalhes">Passeio acompanhado por um cuidador responsável.</p>
-                                <button type="button">Ver detalhes</button>
-                            </div> <!-- Fecha as informações do terceiro cartão. -->
-                        </div> <!-- Fecha o terceiro cartão. -->
-                    </div> <!-- Fecha o conjunto de cartões. -->
-                </div> <!-- Fecha a galeria. -->
-            </main>
-            <footer id="contato">Patas &amp; Cia · Cuidado que seu cão merece.</footer>
-            <!-- Cria o rodapé e seu destino de navegação. -->
-        </div> <!-- Fecha a área de conteúdo. -->
-    </div> <!-- Fecha a estrutura geral. -->
-    <script src="script.js" defer></script> <!-- Liga o JavaScript e aguarda o carregamento do HTML. -->
-</body>
+                <h1 class="hero-title">Portal de Projetos e Materiais de <span>Programação Web</span></h1>
+                <p class="hero-subtitle">
+                    Espaço centralizado para navegação, estudo de código didático e interação com os projetos desenvolvidos ao longo da disciplina.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projetos" class="btn btn-primary">
+                        🚀 Explorar Projetos Práticos
+                    </a>
+                    <a href="#materiais" class="btn btn-secondary">
+                        📥 Baixar Documentos &amp; PDFs
+                    </a>
+                </div>
 
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2+</span>
+                        <span class="stat-label">Páginas Prontas</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Código Didático</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">Web</span>
+                        <span class="stat-label">HTML · CSS · JS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-card-preview">
+                <div class="code-preview-window">
+                    <div class="window-header">
+                        <div class="window-dots">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                        </div>
+                        <span class="window-title">portal-programacao-web</span>
+                    </div>
+                    <div class="window-body">
+                        <p class="code-line"><span class="code-keyword">const</span> <span class="code-var">disciplina</span> = {</p>
+                        <p class="code-line indent-1"><span class="code-prop">nome</span>: <span class="code-str">"Programação Web"</span>,</p>
+                        <p class="code-line indent-1"><span class="code-prop">professor</span>: <span class="code-str">"Prof. Me. Ábner Lucas"</span>,</p>
+                        <p class="code-line indent-1"><span class="code-prop">foco</span>: [<span class="code-str">"HTML5"</span>, <span class="code-str">"CSS Grid &amp; Flex"</span>, <span class="code-str">"JS DOM"</span>],</p>
+                        <p class="code-line indent-1"><span class="code-prop">publicacao</span>: <span class="code-str">"GitHub Pages &amp; Vercel"</span></p>
+                        <p class="code-line">};</p>
+                        <div class="code-status-box">
+                            <span class="pulse-icon">✓</span>
+                            <span>Repositório estruturado e pronto para navegação</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE PROJETOS PRÁTICOS -->
+    <section id="projetos" class="section projects-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Aplicações Práticas</span>
+                <h2 class="section-title">Projetos Desenvolvidos</h2>
+                <p class="section-desc">
+                    Navegue pelos projetos interativos da disciplina. Cada projeto demonstra conceitos fundamentais de estrutura, estilização e programação.
+                </p>
+            </div>
+
+            <!-- FILTRO DE CATEGORIAS -->
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">Todos os Projetos</button>
+                <button class="filter-btn" data-filter="diagnostica">Atividades Diagnósticas</button>
+                <button class="filter-btn" data-filter="pratico">Projetos Base</button>
+            </div>
+
+            <!-- GRADE DE PROJETOS -->
+            <div class="projects-grid">
+                
+                <!-- PROJETO 1: ATIVIDADE DIAGNÓSTICA -->
+                <article class="project-card" data-category="diagnostica">
+                    <div class="project-badge-top">
+                        <span class="badge badge-accent">Atividade Diagnóstica</span>
+                        <span class="badge badge-subtle">Semestre 2026</span>
+                    </div>
+                    <div class="project-media">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Interface de Desenvolvimento Web">
+                        <div class="media-overlay">
+                            <span class="overlay-tag">Interface Interativa</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Portal de Instruções · Atividade Diagnóstica</h3>
+                        <p class="project-summary">
+                            Ambiente virtual interativo desenvolvido para apresentar as orientações da atividade diagnóstica, com modais detalhados, regras técnicas, critérios de avaliação e simulação interativa de login via JavaScript.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML5 Semântico</span>
+                            <span class="tech-tag">CSS Flexbox</span>
+                            <span class="tech-tag">Modais DOM</span>
+                            <span class="tech-tag">JavaScript Eventos</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="./projetos/01-atividade-diagnostica/index.html" class="btn btn-card-primary">
+                            Acessar Página Interativa <span>→</span>
+                        </a>
+                        <a href="./docs/Atividade_Diagnostica_Layout_Interativo.pdf" download class="btn btn-card-secondary" title="Baixar PDF das orientações">
+                            ⬇️ PDF
+                        </a>
+                    </div>
+                </article>
+
+                <!-- PROJETO 2: PATAS & CIA -->
+                <article class="project-card" data-category="pratico">
+                    <div class="project-badge-top">
+                        <span class="badge badge-brand">Projeto Base Didático</span>
+                        <span class="badge badge-subtle">Comentado Linha a Linha</span>
+                    </div>
+                    <div class="project-media">
+                        <img src="./projetos/02-patas-e-cia/img/creche.jpg" alt="Patas e Cia - Creche para cães">
+                        <div class="media-overlay">
+                            <span class="overlay-tag">Landing Page de Serviços</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Patas &amp; Cia · Creche Canina</h3>
+                        <p class="project-summary">
+                            Landing page completa para serviços de creche canina, com menu lateral, cabeçalho flexível, grid responsivo de cartões e funcionalidade interativa em JavaScript para alternar detalhes dos serviços com <span class="highlight">classList.toggle()</span>.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">CSS Grid (190px 1fr)</span>
+                            <span class="tech-tag">Flexbox</span>
+                            <span class="tech-tag">Cards Interativos</span>
+                            <span class="tech-tag">Responsivo</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="./projetos/02-patas-e-cia/index.html" class="btn btn-card-primary">
+                            Acessar Página do Projeto <span>→</span>
+                        </a>
+                        <a href="./projetos/02-patas-e-cia/index.html#servicos" class="btn btn-card-secondary" title="Visualizar catálogo">
+                            🐾 Serviços
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE MATERIAIS & DOWNLOADS -->
+    <section id="materiais" class="section materials-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Documentação Acadêmica</span>
+                <h2 class="section-title">Materiais de Apoio &amp; PDFs</h2>
+                <p class="section-desc">
+                    Consulte os roteiros oficiais das atividades práticas para estudar os requisitos, esquemas visuais e critérios avaliativos.
+                </p>
+            </div>
+
+            <div class="materials-grid">
+                
+                <div class="material-card">
+                    <div class="material-icon">📑</div>
+                    <div class="material-info">
+                        <h4>Atividade Diagnóstica · Layout Web Interativo</h4>
+                        <p>Documento oficial contendo a situação proposta para construção do Portal de Projetos, formulário de login simulado, requisitos de CSS Flexbox e eventos JavaScript.</p>
+                        <div class="material-meta">
+                            <span>Formato: PDF</span> · <span>4 páginas</span> · <span>Individual</span>
+                        </div>
+                    </div>
+                    <div class="material-action">
+                        <a href="./docs/Atividade_Diagnostica_Layout_Interativo.pdf" download class="btn btn-download-file">
+                            ⬇️ Baixar Arquivo
+                        </a>
+                    </div>
+                </div>
+
+                <div class="material-card">
+                    <div class="material-icon">📄</div>
+                    <div class="material-info">
+                        <h4>Atividade Diagnóstica · Mostra de Tecnologia</h4>
+                        <p>Roteiro prático para desenvolvimento da página de divulgação da Mostra de Projetos de Tecnologia com formulário completo de inscrição e campos semânticos.</p>
+                        <div class="material-meta">
+                            <span>Formato: PDF</span> · <span>5 páginas</span> · <span>Individual</span>
+                        </div>
+                    </div>
+                    <div class="material-action">
+                        <a href="./docs/Atividade_Diagnostica_Web.pdf" download class="btn btn-download-file">
+                            ⬇️ Baixar Arquivo
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO TRILHA DE APRENDIZADO -->
+    <section id="trilha" class="section timeline-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Conteúdos Curriculares</span>
+                <h2 class="section-title">Trilha da Disciplina</h2>
+                <p class="section-desc">
+                    Visão geral dos conceitos teóricos e práticos explorados ao longo das aulas de Programação Web.
+                </p>
+            </div>
+
+            <div class="timeline-grid">
+                <div class="timeline-card">
+                    <div class="step-badge">Etapa 1</div>
+                    <h3>Estrutura com HTML5</h3>
+                    <p>Marcação semântica (header, nav, aside, main, section, footer), formulários acessíveis, links e organização de pastas no VS Code.</p>
+                </div>
+
+                <div class="timeline-card">
+                    <div class="step-badge">Etapa 2</div>
+                    <h3>Estilização com CSS3</h3>
+                    <p>Box model, Flexbox para alinhamentos, CSS Grid para layouts complexos, variáveis CSS, sombras e efeitos de transição/transform.</p>
+                </div>
+
+                <div class="timeline-card">
+                    <div class="step-badge">Etapa 3</div>
+                    <h3>Interatividade com JavaScript</h3>
+                    <p>Manipulação de elementos do DOM, eventos de clique, formulários interativos, alternância de classes e validações no navegador.</p>
+                </div>
+
+                <div class="timeline-card">
+                    <div class="step-badge">Etapa 4</div>
+                    <h3>Publicação &amp; Versionamento</h3>
+                    <p>Controle de versão com Git, repositórios no GitHub e publicação contínua via GitHub Pages e Vercel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>&lt;ProgWeb/&gt;</h3>
+                <p>Repositório de projetos e estudos da disciplina de Programação Web.</p>
+            </div>
+            <div class="footer-info">
+                <p><strong>Orientação:</strong> Prof. Me. Ábner Lucas</p>
+                <p>Turma 2026 · Projetos Acadêmicos</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Portal de Programação Web. Desenvolvido para fins didáticos.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
+
