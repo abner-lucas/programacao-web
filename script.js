@@ -1,6 +1,6 @@
 /**
  * PORTAL DE PROGRAMAÇÃO WEB - SCRIPT PRINCIPAL
- * Prof. Me. Ábner Lucas · Turma 2026
+ * Prof. Ábner Lucas · IFPA Campus Breves
  */
 
 document.addEventListener('DOMContentLoaded', () => {

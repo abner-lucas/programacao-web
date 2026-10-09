@@ -1,6 +1,6 @@
 # 🌐 Portal de Programação Web
 
-Repositório central de estudos, páginas e projetos práticos desenvolvidos na disciplina de **Programação Web** (Prof. Me. Ábner Lucas · Turma 2026).
+Repositório central de estudos, páginas e projetos práticos desenvolvidos na disciplina de **Programação Web** (Prof. Ábner Lucas · IFPA Campus Breves).
 
 ---
 
@@ -35,6 +35,11 @@ github-page/
         ├── style.css                    # Grid (190px 1fr), Flexbox e media queries responsivas
         ├── script.js                    # Manipulação de DOM (classList.toggle)
         └── img/                         # Imagens dos serviços e favicon
+    │
+    └── 03-atividade-3-avaliacao/        # 📝 3ª Avaliação: Personalização de um Site Responsivo
+        ├── app/, components/, lib/      # Código-fonte (Next.js + Tailwind)
+        ├── index.html, _next/           # Versão estática publicada (gerada por npm run build:pages)
+        └── package.json
 ```
 
 ---
@@ -56,6 +61,11 @@ github-page/
   * CSS Grid para divisão entre barra lateral e área de conteúdo.
   * Grid de cartões de serviços com exibição expansível de detalhes no clique do botão.
   * Totalmente responsivo para celulares, tablets e computadores.
+
+### 3. [3ª Avaliação · Personalização de um Site Responsivo](./projetos/03-atividade-3-avaliacao/)
+* **Tema**: Transformar o projeto Patas & Cia em um site com outro tema (em dupla).
+* **Recursos**: roteiro do desafio, orientações de personalização, checklist interativo, publicação no Tiiny.host e critérios de entrega.
+* **Como atualizar**: dentro da pasta, rode `npm install` (uma vez) e depois `npm run build:pages`.
 
 ---
 

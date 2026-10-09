@@ -27,7 +27,7 @@
             </nav>
 
             <div class="nav-actions">
-                <span class="teacher-tag">Prof. Me. Ábner Lucas</span>
+                <span class="teacher-tag">Prof. Ábner Lucas</span>
                 <button class="mobile-toggle" id="menu-toggle" aria-label="Abrir Menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -40,7 +40,7 @@
         <div class="hero-container">
             <div class="hero-content">
                 <div class="badge-pill">
-                    <span class="dot-live"></span> Turma 2026 · Ambiente Acadêmico
+                    <span class="dot-live"></span> IFPA Campus Breves · Técnico em Informática
                 </div>
                 <h1 class="hero-title">Portal de Projetos e Materiais de <span>Programação Web</span></h1>
                 <p class="hero-subtitle">
@@ -57,8 +57,8 @@
 
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <span class="stat-number">2+</span>
-                        <span class="stat-label">Páginas Prontas</span>
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Projetos no Portal</span>
                     </div>
                     <div class="stat-divider"></div>
                     <div class="stat-item">
@@ -86,7 +86,7 @@
                     <div class="window-body">
                         <p class="code-line"><span class="code-keyword">const</span> <span class="code-var">disciplina</span> = {</p>
                         <p class="code-line indent-1"><span class="code-prop">nome</span>: <span class="code-str">"Programação Web"</span>,</p>
-                        <p class="code-line indent-1"><span class="code-prop">professor</span>: <span class="code-str">"Prof. Me. Ábner Lucas"</span>,</p>
+                        <p class="code-line indent-1"><span class="code-prop">professor</span>: <span class="code-str">"Prof. Ábner Lucas"</span>,</p>
                         <p class="code-line indent-1"><span class="code-prop">foco</span>: [<span class="code-str">"HTML5"</span>, <span class="code-str">"CSS Grid &amp; Flex"</span>, <span class="code-str">"JS DOM"</span>],</p>
                         <p class="code-line indent-1"><span class="code-prop">publicacao</span>: <span class="code-str">"GitHub Pages &amp; Vercel"</span></p>
                         <p class="code-line">};</p>
@@ -116,6 +116,7 @@
                 <button class="filter-btn active" data-filter="all">Todos os Projetos</button>
                 <button class="filter-btn" data-filter="diagnostica">Atividades Diagnósticas</button>
                 <button class="filter-btn" data-filter="pratico">Projetos Base</button>
+                <button class="filter-btn" data-filter="avaliacao">Avaliações</button>
             </div>
 
             <!-- GRADE DE PROJETOS -->
@@ -125,7 +126,7 @@
                 <article class="project-card" data-category="diagnostica">
                     <div class="project-badge-top">
                         <span class="badge badge-accent">Atividade Diagnóstica</span>
-                        <span class="badge badge-subtle">Semestre 2026</span>
+                        <span class="badge badge-subtle">Individual</span>
                     </div>
                     <div class="project-media">
                         <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Interface de Desenvolvimento Web">
@@ -189,6 +190,44 @@
                     </div>
                 </article>
 
+                <!-- PROJETO 3: 3ª AVALIAÇÃO -->
+                <article class="project-card" data-category="avaliacao">
+                    <div class="project-badge-top">
+                        <span class="badge badge-eval">3ª Avaliação</span>
+                        <span class="badge badge-subtle">Em dupla</span>
+                    </div>
+                    <div class="project-media project-media-eval">
+                        <div class="eval-cover">
+                            <span class="eval-cover-kicker">Roteiro prático</span>
+                            <strong>Personalização de um Site Responsivo</strong>
+                            <span class="eval-cover-flow">Patas &amp; Cia → novo tema</span>
+                        </div>
+                        <div class="media-overlay">
+                            <span class="overlay-tag">Orientações da Avaliação</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">3ª Avaliação · Personalização de um Site Responsivo</h3>
+                        <p class="project-summary">
+                            Transforme o projeto Patas &amp; Cia em um site com outro tema. O roteiro apresenta o desafio, as orientações de personalização, o checklist interativo de teste, a publicação no Tiiny.host e os critérios de entrega e avaliação.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML, CSS e JavaScript</span>
+                            <span class="tech-tag">Responsivo</span>
+                            <span class="tech-tag">Checklist</span>
+                            <span class="tech-tag">Tiiny.host</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="./projetos/03-atividade-3-avaliacao/index.html" class="btn btn-card-primary">
+                            Ver Orientações <span>→</span>
+                        </a>
+                        <a href="./projetos/02-patas-e-cia/index.html" class="btn btn-card-secondary" title="Abrir o projeto base Patas &amp; Cia">
+                            🐾 Projeto Base
+                        </a>
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
@@ -212,7 +251,7 @@
                         <h4>Atividade Diagnóstica · Layout Web Interativo</h4>
                         <p>Documento oficial contendo a situação proposta para construção do Portal de Projetos, formulário de login simulado, requisitos de CSS Flexbox e eventos JavaScript.</p>
                         <div class="material-meta">
-                            <span>Formato: PDF</span> · <span>4 páginas</span> · <span>Individual</span>
+                            <span>Formato: PDF</span> · <span>Individual</span>
                         </div>
                     </div>
                     <div class="material-action">
@@ -228,7 +267,7 @@
                         <h4>Atividade Diagnóstica · Mostra de Tecnologia</h4>
                         <p>Roteiro prático para desenvolvimento da página de divulgação da Mostra de Projetos de Tecnologia com formulário completo de inscrição e campos semânticos.</p>
                         <div class="material-meta">
-                            <span>Formato: PDF</span> · <span>5 páginas</span> · <span>Individual</span>
+                            <span>Formato: PDF</span> · <span>Individual</span>
                         </div>
                     </div>
                     <div class="material-action">
@@ -289,8 +328,8 @@
                 <p>Repositório de projetos e estudos da disciplina de Programação Web.</p>
             </div>
             <div class="footer-info">
-                <p><strong>Orientação:</strong> Prof. Me. Ábner Lucas</p>
-                <p>Turma 2026 · Projetos Acadêmicos</p>
+                <p><strong>Orientação:</strong> Prof. Ábner Lucas</p>
+                <p>IFPA Campus Breves · Técnico em Informática</p>
             </div>
         </div>
         <div class="footer-bottom">
