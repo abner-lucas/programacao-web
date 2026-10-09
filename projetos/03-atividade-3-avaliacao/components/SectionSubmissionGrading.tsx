@@ -33,10 +33,7 @@ export default function SectionSubmissionGrading() {
   return (
     <section id="entrega-avaliacao" className="py-10 scroll-mt-16 border-b border-slate-200/90">
       {/* Título da Seção */}
-      <div className="flex items-center gap-2.5 mb-6">
-        <div className="w-8 h-8 rounded-lg bg-blue-50 border border-blue-200/80 flex items-center justify-center text-blue-600">
-          <Award className="w-4 h-4" />
-        </div>
+      <div className="mb-6">
         <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
           📤 Entregue e apresente
         </h2>
