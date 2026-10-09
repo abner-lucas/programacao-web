@@ -1,0 +1,105 @@
+<!DOCTYPE html> <!-- Define o documento como HTML5. -->
+<html lang="pt-BR"> <!-- Inicia o documento e define o idioma como português do Brasil. -->
+
+<head> <!-- Contém metadados e configurações da página. -->
+    <meta charset="UTF-8"> <!-- Suporte a acentos e caracteres especiais. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajuste inicial de escala da janela. -->
+    <title>Nome do Site · Projeto Base</title> <!-- Título exibido na aba do navegador. -->
+    <link rel="icon" href="img/icone.png" type="image/png"> <!-- Ícone da página (favicon). -->
+    <link rel="stylesheet" href="style.css"> <!-- Vincula a folha de estilos CSS externa. -->
+</head>
+
+<body> <!-- Início do conteúdo visível da página. -->
+    <div class="layout"> <!-- Contêiner principal para organizar o menu lateral e o conteúdo. -->
+
+        <!-- Menu Lateral -->
+        <aside class="lateral">
+            <strong class="logo">Nome do Site</strong> <!-- Nome ou logotipo da marca. -->
+            <p>Descrição curta sobre o objetivo ou tema do seu projeto.</p> <!-- Apresentação breve. -->
+            <nav class="navegacao-lateral"> <!-- Agrupamento semântico dos links de navegação. -->
+                <a href="#inicio">Início</a> <!-- Link para o topo/apresentação. -->
+                <a href="#galeria">Galeria</a> <!-- Link para a seção de cartões. -->
+                <a href="#contato">Contato</a> <!-- Link para o rodapé. -->
+            </nav>
+        </aside>
+
+        <!-- Área de Conteúdo -->
+        <div class="conteudo">
+
+            <!-- Cabeçalho Superior -->
+            <header class="cabecalho">
+                <strong class="marca">Nome do Site</strong> <!-- Marca destacada no topo. -->
+                <nav class="menu-topo"> <!-- Menu complementar horizontal. -->
+                    <a href="#inicio">Início</a>
+                    <a href="#galeria">Galeria</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+            </header>
+
+            <!-- Conteúdo Principal -->
+            <main>
+                <!-- Bloco de Apresentação / Destaque -->
+                <section id="inicio" class="destaque">
+                    <h1>Apresentação Principal</h1> <!-- Título em maior destaque da página. -->
+                    <p>Texto introdutório com mensagem clara e convidativa para os visitantes conhecerem seus produtos, serviços ou itens.</p>
+                    <a class="botao-principal" href="#galeria">Explorar galeria</a> <!-- Botão de chamada para ação. -->
+                </section>
+
+                <!-- Seção da Galeria com 3 Cartões -->
+                <section id="galeria" class="galeria">
+                    <h2>Nossos Destaques</h2> <!-- Título da seção. -->
+                    <div class="cards"> <!-- Contêiner em grade para os 3 cartões. -->
+
+                        <!-- Cartão 1 -->
+                        <div class="card">
+                            <img src="img/item1.jpg" alt="Foto ilustrativa do Item 1"> <!-- Imagem do item. -->
+                            <div class="info">
+                                <h3>Cartão 1</h3> <!-- Título do primeiro item. -->
+                                <p>Breve descrição com as principais qualidades deste primeiro item.</p>
+                                <strong>R$ 49,90</strong> <!-- Preço ou destaque do cartão. -->
+                                <p class="detalhes">Detalhes completos e adicionais que ficam ocultos e aparecem ao clicar no botão.</p>
+                                <button type="button">Ver detalhes</button> <!-- Botão interativo. -->
+                            </div>
+                        </div>
+
+                        <!-- Cartão 2 -->
+                        <div class="card">
+                            <img src="img/item2.jpg" alt="Foto ilustrativa do Item 2">
+                            <div class="info">
+                                <h3>Cartão 2</h3>
+                                <p>Breve descrição com as principais qualidades deste segundo item.</p>
+                                <strong>R$ 79,90</strong>
+                                <p class="detalhes">Detalhes completos e adicionais que ficam ocultos e aparecem ao clicar no botão.</p>
+                                <button type="button">Ver detalhes</button>
+                            </div>
+                        </div>
+
+                        <!-- Cartão 3 -->
+                        <div class="card">
+                            <img src="img/item3.jpg" alt="Foto ilustrativa do Item 3">
+                            <div class="info">
+                                <h3>Cartão 3</h3>
+                                <p>Breve descrição com as principais qualidades deste terceiro item.</p>
+                                <strong>R$ 99,90</strong>
+                                <p class="detalhes">Detalhes completos e adicionais que ficam ocultos e aparecem ao clicar no botão.</p>
+                                <button type="button">Ver detalhes</button>
+                            </div>
+                        </div>
+
+                    </div> <!-- Fim de .cards -->
+                </section> <!-- Fim de .galeria -->
+            </main>
+
+            <!-- Rodapé -->
+            <footer id="contato">
+                <p>Nome do Site · Desenvolvido por [Nome do Aluno 1] e [Nome do Aluno 2] | Contato: contato@exemplo.com</p>
+            </footer>
+
+        </div> <!-- Fim de .conteudo -->
+    </div> <!-- Fim de .layout -->
+
+    <!-- Script JavaScript para interação dos botões -->
+    <script src="script.js" defer></script>
+</body>
+
+</html>

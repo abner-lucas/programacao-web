@@ -16,11 +16,8 @@ export interface AssignmentConfig {
 }
 
 export const assignmentConfig: AssignmentConfig = {
-  // If base files are not provided in the prompt/workspace, follow prompt instruction:
-  // "Se nenhum arquivo-base tiver sido fornecido, oculte downloads e códigos e exiba:
-  // 'O projeto-base será disponibilizado pelo professor.'"
-  hasBaseProjectFiles: false,
-  baseProjectZipUrl: undefined,
+  hasBaseProjectFiles: true,
+  baseProjectZipUrl: 'projeto-base.zip',
   baseProjectFiles: undefined,
   submissionDeadline: undefined,
   submissionPlatformUrl: undefined,

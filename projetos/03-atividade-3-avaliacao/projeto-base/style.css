@@ -1,0 +1,284 @@
+/* ========================================================
+   PROJETO BASE · FOLHA DE ESTILOS CSS
+   Layout padrão para computador (Desktop).
+   Atenção: este arquivo propositalmente NÃO contém regras
+   de responsividade. O desafio dos alunos é personalizá-lo
+   e criar as Media Queries necessárias!
+   ======================================================== */
+
+/* Configuração universal para cálculo correto de dimensões */
+* {
+    box-sizing: border-box; /* Inclui padding e bordas na largura/altura total */
+}
+
+/* Estilos gerais do corpo da página */
+body {
+    margin: 0; /* Remove a margem padrão externa do navegador */
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Fonte moderna e limpa */
+    background-color: #f8fafc; /* Cor de fundo suave (cinza claro) */
+    color: #1e293b; /* Cor principal dos textos (cinza escuro) */
+    line-height: 1.5; /* Espaçamento padrão entre linhas */
+}
+
+/* ================= ESTRUTURA GERAL (GRID) ================= */
+
+/* Contêiner principal que divide o menu lateral e o conteúdo */
+.layout {
+    display: grid; /* Ativa o sistema de grade CSS Grid */
+    grid-template-columns: 220px 1fr; /* Coluna lateral fixa de 220px e área restante dinâmica */
+    min-height: 100vh; /* Garante que o layout ocupe no mínimo toda a altura da tela */
+}
+
+/* ================= MENU LATERAL ================= */
+
+.lateral {
+    background-color: #0f172a; /* Fundo escuro elegante (slate 900) */
+    color: #f8fafc; /* Texto claro para contraste */
+    padding: 28px 20px; /* Espaçamento interno */
+}
+
+.logo {
+    display: block; /* Ocupa linha inteira */
+    font-size: 22px; /* Tamanho destacado para a marca */
+    font-weight: 700;
+    color: #38bdf8; /* Cor azul claro em destaque */
+    margin-bottom: 8px;
+}
+
+.lateral p {
+    font-size: 13px;
+    color: #94a3b8; /* Tom cinza suave para texto auxiliar */
+    margin: 0 0 24px 0;
+}
+
+.navegacao-lateral a {
+    display: block; /* Cada link ocupa uma linha completa */
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    color: #e2e8f0;
+    text-decoration: none; /* Remove o sublinhado padrão */
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px; /* Cantos arredondados */
+    transition: background-color 0.2s, color 0.2s, transform 0.2s; /* Transição suave no hover */
+}
+
+.navegacao-lateral a:hover {
+    background-color: #1e293b; /* Fundo destacado ao passar o mouse */
+    color: #38bdf8; /* Cor do texto no hover */
+    transform: translateX(4px); /* Leve deslocamento para a direita */
+}
+
+/* ================= ÁREA DE CONTEÚDO ================= */
+
+.conteudo {
+    display: flex;
+    flex-direction: column; /* Organiza cabeçalho, conteúdo e rodapé na vertical */
+}
+
+/* ================= CABEÇALHO SUPERIOR ================= */
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between; /* Marca à esquerda e links à direita */
+    align-items: center; /* Centralização vertical */
+    padding: 18px 32px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0; /* Linha sutil de divisão */
+}
+
+.marca {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2563eb; /* Azul corporativo */
+}
+
+.menu-topo {
+    display: flex;
+    gap: 20px; /* Espaço entre os links */
+}
+
+.menu-topo a {
+    color: #475569;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.menu-topo a:hover {
+    color: #2563eb;
+}
+
+/* ================= CONTEÚDO PRINCIPAL (MAIN) ================= */
+
+main {
+    flex: 1; /* Ocupa todo o espaço vertical disponível */
+    padding: 32px;
+}
+
+/* Bloco de Apresentação / Destaque */
+.destaque {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8); /* Degradê azul moderno */
+    color: #ffffff;
+    padding: 36px 32px;
+    border-radius: 16px; /* Cantos arredondados */
+    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.25); /* Sombra elegante */
+    margin-bottom: 36px;
+}
+
+.destaque h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.destaque p {
+    margin: 0 0 20px 0;
+    max-width: 650px;
+    color: #e0e7ff;
+    font-size: 16px;
+}
+
+.botao-principal {
+    display: inline-block;
+    padding: 11px 22px;
+    background-color: #ffffff;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.botao-principal:hover {
+    transform: translateY(-2px); /* Efeito de elevação */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ================= GALERIA DE CARTÕES ================= */
+
+.galeria h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 20px 0;
+}
+
+/* Grade de cartões: 3 colunas para tela de computador */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas de larguras iguais */
+    gap: 20px; /* Espaço entre os cartões */
+}
+
+/* Cada cartão individual */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    overflow: hidden; /* Impede que imagem ou conteúdo vazem as bordas arredondadas */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px); /* Leve elevação no hover */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+}
+
+.card img {
+    width: 100%;
+    height: 160px; /* Altura padrão para as imagens */
+    object-fit: cover; /* Ajusta e recorta a imagem sem distorcer proporções */
+    display: block;
+}
+
+.info {
+    padding: 18px;
+}
+
+.info h3 {
+    margin: 0 0 8px 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.info p {
+    margin: 0 0 12px 0;
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+.card strong {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #2563eb; /* Destaque para o valor ou tag */
+}
+
+/* Detalhes ocultos por padrão */
+.detalhes {
+    display: none; /* Oculto inicialmente */
+    padding: 10px;
+    margin-bottom: 12px;
+    background-color: #f1f5f9;
+    border-left: 3px solid #2563eb;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #334155;
+}
+
+/* Quando o cartão recebe a classe .aberto via JavaScript, os detalhes aparecem */
+.card.aberto .detalhes {
+    display: block;
+}
+
+/* Botão de ação do cartão */
+button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+    background-color: #eff6ff; /* Fundo azul bem suave */
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* ================= RODAPÉ ================= */
+
+footer {
+    padding: 20px 32px;
+    text-align: center;
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ========================================================
+   ÁREA DESTINADA ÀS MEDIA QUERIES (RESPONSIVIDADE)
+   Alunos: adicionem abaixo as regras para tablets e celulares!
+   Dica: @media (max-width: 800px) { ... }
+   ======================================================== */

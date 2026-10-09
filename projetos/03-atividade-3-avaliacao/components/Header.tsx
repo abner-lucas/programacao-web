@@ -40,7 +40,7 @@ export default function Header() {
 
         {/* Presentation description */}
         <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-3xl">
-          Transforme o projeto Patas & Cia em um site com outro tema. Personalize, teste e publique o resultado.
+          Transforme o projeto-base em um site com o tema da sua dupla. Personalize, teste e publique o resultado.
         </p>
 
         {/* Metadata markers with modern styling */}

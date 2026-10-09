@@ -9,6 +9,7 @@ import {
   FolderTree,
   ChevronDown,
   Download,
+  ExternalLink,
   Copy,
   Check,
   Info,
@@ -111,16 +112,27 @@ export default function SectionCustomization() {
             </p>
           </div>
 
-          <div>
+          <div className="flex flex-wrap items-center gap-3">
             {assignmentConfig.hasBaseProjectFiles && assignmentConfig.baseProjectZipUrl ? (
-              <a
-                href={assignmentConfig.baseProjectZipUrl}
-                download
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl transition-all shadow-xs hover:shadow hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
-              >
-                <Download className="w-4 h-4" />
-                <span>Baixar projeto-base (.zip)</span>
-              </a>
+              <>
+                <a
+                  href={assignmentConfig.baseProjectZipUrl}
+                  download
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl transition-all shadow-xs hover:shadow hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                >
+                  <Download className="w-4 h-4" />
+                  <span>Baixar projeto-base (.zip)</span>
+                </a>
+                <a
+                  href="projeto-base/index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2.5 bg-white hover:bg-slate-50 text-slate-700 text-xs sm:text-sm font-semibold rounded-xl border border-slate-200/90 shadow-2xs transition-colors"
+                >
+                  <ExternalLink className="w-4 h-4 text-slate-500 shrink-0" />
+                  <span>Visualizar online</span>
+                </a>
+              </>
             ) : (
               <div className="inline-flex items-center gap-2 px-4 py-2.5 bg-white border border-slate-200/90 text-slate-700 text-sm font-medium rounded-xl shadow-2xs">
                 <Info className="w-4 h-4 text-blue-600 shrink-0" />
