@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Projetos - Instruções da Atividade</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- MENU LATERAL -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>&lt;Portal/&gt;<span>Projetos</span></h2>
+            </div>
+            <div class="sidebar-download">
+                <a href="docs/Atividade_Diagnostica_Layout_Interativo.pdf" download class="btn-download">
+                    ⬇️ Baixar PDF da Atividade
+                </a>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="../../index.html" class="menu-link nav-back">⬅️ Portal da Disciplina</a></li>
+                    <li><a href="#" class="menu-link active" onclick="showSection('inicio')">🏠 Início</a></li>
+                    <li><a href="#" class="menu-link" onclick="openModal('modal-orientacoes')">📄 Orientações da Atividade</a></li>
+                    <li><a href="#" class="menu-link" onclick="openModal('modal-requisitos')">⚙️ Requisitos Técnicos</a></li>
+                    <li><a href="#" class="menu-link" onclick="openModal('modal-criterios')">📊 Critérios de Avaliação</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Prof. Me. Ábner Lucas<br>Turma 2026</p>
+            </div>
+        </aside>
+
+        <!-- ÁREA PRINCIPAL -->
+        <main class="main-content">
+            
+            <!-- Seção Início -->
+            <section id="inicio" class="content-section active">
+                <header class="content-header">
+                    <h1>Bem-vindo ao Portal de Projetos</h1>
+                    <p>Ambiente virtual para a Atividade Diagnóstica Prática de Programação Web.</p>
+                </header>
+
+                <div class="hero-image-container">
+                    <!-- Imagem para compor o design -->
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Desenvolvimento Web" class="hero-img">
+                    <div class="hero-overlay">
+                        <h3>Construção de Layout Web Interativo</h3>
+                        <p>Utilize o menu lateral para ler as instruções completas da atividade. Antes de começar, faça uma simulação de acesso abaixo.</p>
+                    </div>
+                </div>
+
+                <!-- FORMULÁRIO DE ACESSO (Conforme exigido na atividade) -->
+                <div class="login-wrapper">
+                    <div class="login-box" id="login-box">
+                        <div class="login-header">
+                            <h3>Acesso do Estudante</h3>
+                            <p>Simulação de formulário interativo</p>
+                        </div>
+                        <form id="login-form">
+                            <div class="input-group">
+                                <label for="usuario">Usuário ou E-mail</label>
+                                <input type="text" id="usuario" required placeholder="aluno@escola.com">
+                            </div>
+                            <div class="input-group">
+                                <label for="senha">Senha</label>
+                                <input type="password" id="senha" required placeholder="********">
+                            </div>
+                            <button type="submit" class="btn-acesso" id="btn-entrar">ENTRAR <span class="arrow">→</span></button>
+                        </form>
+                    </div>
+                    
+                    <!-- Mensagem de Sucesso (Oculta inicialmente) -->
+                    <div class="success-box hidden" id="success-box">
+                        <div class="icon-check">✅</div>
+                        <h3>Acesso Liberado!</h3>
+                        <p>Muito bem! Você acaba de interagir com o JavaScript. Agora, clique nos links do menu lateral para ler as regras do seu projeto.</p>
+                        <button class="btn-outline" onclick="resetLogin()">Voltar ao Login</button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ================= MODAIS (SUBPÁGINAS) ================= -->
+
+    <!-- Modal 1: Orientações Gerais -->
+    <div id="modal-orientacoes" class="modal-overlay">
+        <div class="modal-container">
+            <button class="btn-close" onclick="closeModal('modal-orientacoes')">&times;</button>
+            <div class="modal-header">
+                <h2>Orientações da Atividade</h2>
+            </div>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Estudantes" class="modal-img">
+                <div class="callout">
+                    <strong>Finalidade:</strong> Identificar os conhecimentos já desenvolvidos em HTML, CSS e JavaScript, para planejar a continuidade da disciplina.
+                </div>
+                <p><strong>Atenção:</strong> A atividade não valerá nota e não terá caráter punitivo. O objetivo é verificar o que cada estudante consegue desenvolver atualmente.</p>
+                <ul class="lista-detalhes">
+                    <li><strong>Modalidade:</strong> Individual</li>
+                    <li><strong>Duração:</strong> Duas aulas consecutivas</li>
+                    <li><strong>Entrega:</strong> Pasta zipada (diagnostico_nome_sobrenome)</li>
+                </ul>
+                <h3>A Situação Proposta</h3>
+                <p>Você deverá construir a interface de um <strong>Portal de Projetos de Informática</strong> (exatamente como este que você está acessando!). A página deverá possuir um menu lateral, uma área principal de apresentação e um formulário de acesso simulado.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Requisitos Técnicos -->
+    <div id="modal-requisitos" class="modal-overlay">
+        <div class="modal-container modal-large">
+            <button class="btn-close" onclick="closeModal('modal-requisitos')">&times;</button>
+            <div class="modal-header">
+                <h2>Requisitos Técnicos (HTML, CSS e JS)</h2>
+            </div>
+            <div class="modal-body">
+                <div class="req-grid">
+                    <div class="req-card">
+                        <h3>1. HTML (Estrutura)</h3>
+                        <ul>
+                            <li>Menu lateral com pelo menos três opções.</li>
+                            <li>Área principal com título e texto de apresentação.</li>
+                            <li>Formulário de acesso (usuário, senha e botão).</li>
+                            <li>Rodapé com identificação.</li>
+                        </ul>
+                    </div>
+                    <div class="req-card">
+                        <h3>2. CSS (Estilo)</h3>
+                        <ul>
+                            <li>Uso de <code>display: flex</code> para organizar o layout (ex: menu ao lado do conteúdo).</li>
+                            <li>Centralização de elementos.</li>
+                            <li>Posicionamento <code>relative</code> ou <code>absolute</code> em algum elemento.</li>
+                            <li>Uso de <code>transform</code> (ex: hover em botões).</li>
+                        </ul>
+                    </div>
+                    <div class="req-card">
+                        <h3>3. JS (Interatividade)</h3>
+                        <ul>
+                            <li>Implementar pelo menos um evento ao clicar no botão de acesso.</li>
+                            <li>Pode ser exibir mensagem, alterar texto, cor ou mostrar/esconder uma caixa.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Critérios de Avaliação -->
+    <div id="modal-criterios" class="modal-overlay">
+        <div class="modal-container">
+            <button class="btn-close" onclick="closeModal('modal-criterios')">&times;</button>
+            <div class="modal-header">
+                <h2>Aspectos Observados</h2>
+            </div>
+            <div class="modal-body">
+                <p>O foco da avaliação formativa será:</p>
+                <ul class="check-list">
+                    <li>Organização dos arquivos e estrutura HTML.</li>
+                    <li>Construção correta do menu, área principal e formulário.</li>
+                    <li>Conexão entre HTML, CSS e JS.</li>
+                    <li>Utilização correta do Flexbox, margens e alinhamentos.</li>
+                    <li>Posicionamento (absolute/relative) e efeitos visuais (transform).</li>
+                    <li>Criação de um evento interativo em JavaScript.</li>
+                    <li>Autonomia e capacidade de explicar o próprio código.</li>
+                </ul>
+                <div class="alert-info">
+                    Não se preocupe caso tenha dificuldades. Esta atividade servirá justamente para identificar o ponto de continuidade e orientar as próximas aulas!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
