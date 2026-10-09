@@ -114,10 +114,10 @@ export default function SectionSubmissionGrading() {
             </p>
           </div>
 
-          <div className="pt-4 border-t border-slate-100 mt-4">
-            <div className="text-xs text-slate-500 leading-relaxed">
+          <div className="pt-3 border-t border-slate-100 mt-3">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Momento de validação prática: cada estudante demonstra domínio sobre as linhas de código produzidas.
-            </div>
+            </p>
           </div>
         </div>
       </div>
