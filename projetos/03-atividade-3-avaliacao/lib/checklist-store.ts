@@ -1,10 +1,10 @@
 export const CHECKLIST_ITEMS = [
-  'O nome, os textos, as imagens e as cores foram personalizados.',
-  'Os três cartões apresentam conteúdo completo.',
-  'Os menus levam aos destinos corretos da página.',
-  'Os botões mostram e escondem os detalhes.',
-  'O layout funciona no computador e no celular, sem rolagem lateral.',
-  'O link publicado abre corretamente em outro navegador.',
+  'HTML: O nome do site, a apresentação, os textos dos 3 cartões e o rodapé foram alterados, identificando os integrantes.',
+  'Imagens: As 3 imagens foram substituídas, com caminhos corretos em src e descrições em alt.',
+  'CSS: Nova combinação de cores aplicada e efeito de hover personalizado em botões ou links.',
+  'JavaScript: Textos dos botões personalizados e ação de mostrar/esconder detalhes funcionando.',
+  'Responsividade: Menu lateral no PC e no topo no celular, com galeria em 3, 2 e 1 coluna sem rolagem lateral.',
+  'Publicação: ZIP publicado no Tiiny.host e link público testado/abrindo em outro navegador.',
 ];
 
 const STORAGE_KEY = 'avaliacao_web_checklist_progress_v1';
