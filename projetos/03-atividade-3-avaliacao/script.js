@@ -279,10 +279,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const previewFrame = document.getElementById('preview-frame');
 
     const setDeviceView = (device) => {
+        const menuTopo = document.getElementById('preview-menu-topo');
+        const menuLateral = document.getElementById('preview-menu-lateral');
+        const contentLayout = document.getElementById('preview-content-layout');
+        const innerContainer = document.getElementById('preview-inner-container');
+
         if (device === 'desktop') {
             if (btnDesktop) btnDesktop.className = 'flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg transition-all duration-200 bg-blue-600 text-white shadow-xs';
             if (btnMobile) btnMobile.className = 'flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg transition-all duration-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50';
             if (previewAddress) previewAddress.textContent = 'https://meu-site.tiiny.site · 1024px (Computador)';
+            
+            if (menuTopo) menuTopo.classList.add('hidden');
+            if (menuLateral) menuLateral.classList.remove('hidden');
+            if (contentLayout) contentLayout.className = 'flex gap-2.5 items-stretch min-h-[145px]';
+            if (innerContainer) innerContainer.className = 'flex flex-col gap-2.5 max-w-2xl mx-auto text-xs animate-in fade-in duration-200';
             if (previewCardsGrid) previewCardsGrid.className = 'grid grid-cols-3 gap-2 flex-1';
             if (previewFrame) {
                 previewFrame.style.maxWidth = '100%';
@@ -292,6 +302,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (btnMobile) btnMobile.className = 'flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg transition-all duration-200 bg-blue-600 text-white shadow-xs';
             if (btnDesktop) btnDesktop.className = 'flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg transition-all duration-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50';
             if (previewAddress) previewAddress.textContent = 'https://meu-site.tiiny.site · 375px (Celular)';
+            
+            if (menuTopo) menuTopo.classList.remove('hidden');
+            if (menuLateral) menuLateral.classList.add('hidden');
+            if (contentLayout) contentLayout.className = 'flex flex-col gap-2 w-full';
+            if (innerContainer) innerContainer.className = 'flex flex-col gap-2.5 max-w-[320px] mx-auto text-xs animate-in fade-in duration-200';
             if (previewCardsGrid) previewCardsGrid.className = 'grid grid-cols-1 gap-2 flex-1';
             if (previewFrame) {
                 previewFrame.style.maxWidth = '360px';
